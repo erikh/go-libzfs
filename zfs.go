@@ -182,14 +182,10 @@ func DatasetCreate(path string, dtype DatasetType,
 // Close close dataset and all its recursive children datasets (close handle
 // and cleanup dataset object/s from memory)
 func (d *Dataset) Close() {
-	// path, _ := d.Path()
 	Global.Mtx.Lock()
+	defer Global.Mtx.Unlock()
 	C.dataset_list_close(d.list)
 	d.list = nil
-	Global.Mtx.Unlock()
-	for _, cd := range d.Children {
-		cd.Close()
-	}
 }
 
 // reOpen - close and open dataset. Not thread safe!
