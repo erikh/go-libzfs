@@ -1,8 +1,11 @@
+**NOTE**: this is a fork with some fixes applied. The original repository is [here](https://github.com/bicomsystems/go-libzfs).
+
 # Introduction
 
 **go-libzfs** currently implements basic manipulation of ZFS pools and data sets. Plan is to add more in further development, improve documentation with more examples, and add more tests. _go-libzfs_ use libzfs C library and does not wrap OpenZFS CLI tools. Goal is to let easy using and manipulating OpenZFS form with in go, and tries to map libzfs C library in to go style package respecting golang common practice.
 
 ## Note
+
 This golang package is only used and tested on Linux.
 
 - Version tagged as v0.1 is latest used and compatible with ZFS On Linux version 0.6.5.x
@@ -19,7 +22,6 @@ This golang package is only used and tested on Linux.
 - Cloning datasets and volumes.
 - Reading and modifying dataset and volume properties.
 - Send and receive snapshot streams
-
 
 ## Requirements:
 
